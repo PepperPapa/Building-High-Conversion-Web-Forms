@@ -1,0 +1,286 @@
+body {
+  font-family: Verdana, sans-serif;
+  margin: 0px 0px 10px 0px;
+  font-size: 1em;
+  color: #696969;
+  max-width: 100%;
+  box-sizing: border-box
+}
+
+.inline {
+  display: inline !important;
+}
+section {
+  box-sizing: border-box;
+}
+
+header {
+  position: fixed;
+  display: block;
+  height: 56px;
+  background: #e1f0e7;
+  min-width: 100%;
+  padding: 0px 10px;
+  font-size: 2em;
+  line-height: 56px;
+  font-family: Verdana, Arial, sans-serif;
+  box-sizing: border-box;
+  border-bottom: 1px solid lightgray;
+  box-shadow: 0 1px 5px gray;
+}
+
+#submit {
+  padding: 0 20px;
+  text-align: center;
+  height: 45px;
+  color: #6c8b27;
+  background: #b8d874;
+  background: -webkit-linear-gradient(top, #b8d874 0%, #a5cd4e 100%);
+  background: linear-gradient(top, #a5cd4e 0%, #6b8f1a 100%);
+  font: bold 20/22px Arial, sans-serif;
+  font-size: 1.2em;
+  text-shadow: 1px 1px 1px rgba(255,255,255, .22);
+  border-radius: 30px;
+  box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 1px 1px 1px rgba(255,255,255, .44);
+}
+#submit:hover {
+  box-shadow: 1px 1px 1px rgba(0,0,0, .29), inset 0px 0px 2px rgba(0,0,0, .5);
+}
+
+@media screen and (max-width: 649px) {
+  .progress-bar {
+    display: none;
+  }
+
+  section.form {
+    padding-top: 50px;
+  }
+
+  .company-page {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  section {
+    font-size: 1.2 em;
+  }
+  header {
+    padding: 0px;
+    background-color: #dcdcdc;
+    border-bottom: 1px solid #c0c0c0;
+    height: 60px;
+    line-height: 60px;
+  }
+  input {
+    border-radius: 5px;
+    border: 1px solid #b0b0b0;
+    width: 100%;
+    height: 1.2em;
+  }
+  .check-box {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  input[type="checkbox"] {
+    height: 1em;
+    width: 1em;
+    border-radius: 5px;
+    border: 1px solid #b0b0b0;
+  }
+  select {
+    border-radius: 5px;
+    border: 1px solid #b0b0b0;
+    color: #696969;
+    font-size: 1em;
+    height: 1.2em;
+    width: 100%;
+  }
+}
+
+.company-name {
+  display: none;
+}
+
+@media screen and (max-width: 450px) {
+  .company-page {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  section {
+    font-size: 1.2em;
+  }
+  header {
+    padding: 0px;
+    background-color: #dcdcdc;
+    border-bottom: 1px solid #c0c0c0;
+    height: 60px;
+    line-height: 60px;
+  }
+  input {
+    border-radius: 5px;
+    border: 1px solid #b0b0b0;
+    width: 100%;
+    height: 2.5em;
+  }
+  .check-box {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  input[type="checkbox"] {
+    height: 1em;
+    width: 1em;
+    border-radius: 5px;
+    border: 1px solid #b0b0b0;
+  }
+  select {
+    border-radius: 5px;
+    border: 1px solid #b0b0b0;
+    color: #696969;
+    font-size: 1em;
+    height: 2.5em;
+    width: 100%;
+  }
+
+  .order-total {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 451px) {
+  section.form {
+    font-size: 2em;
+  }
+
+  .company-name {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 651px) {
+  /*section.form {
+    padding-top: 100px;
+  }*/
+  #main {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #form {
+    order: 1;
+    width: 50%;
+    margin-top: 60px;
+  }
+  #order-review {
+    order: 0;
+    width: 50%;
+    margin: 0;
+    margin-top: 60px;
+    background-color: #cadada;
+  }
+  .progress-bar {
+    position: fixed;
+    margin-top: 56px;
+    width: 0px;
+    height: 4px;
+    background: #09b509;
+    font-size: 1.5em;
+    font-style: italic;
+    text-align: center;
+  }
+  #submit {
+    width: 40%;
+  }
+  div.submit {
+    text-align: center;
+    margin-top: 10px;
+  }
+  input {
+    border-radius: 5px;
+    border: 1px solid #b0b0b0;
+    width: 100%;
+    height: 1.2em;
+    margin-bottom: 1em;
+  }
+
+  input[type="checkbox"] {
+    border-radius: 5px;
+    border: 1px solid #b0b0b0;
+    width: auto;
+  }
+  #age, #gender, #credit {
+    display: block;
+    margin-bottom: 1em;
+  }
+  select {
+    border-radius: 5px;
+    border: 1px solid #b0b0b0;
+    color: #696969;
+    font-size: 1em;
+    height: 1.2em;
+  }
+  label[for="mail-list"] {
+    display: inline;
+  }
+}
+
+section {
+  padding: 0px 10px;
+}
+
+.company-page {
+  float: left;
+  margin-right: 20px;
+}
+
+
+
+section.form, section.order-review{
+  display: block;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section.form {
+  /*font-size: 2em;*/
+}
+
+section.form input {
+  display: block;
+  font-size: 1em;
+}
+
+.cc-warning {
+  font-size: 0.5em;
+  margin-bottom: 1em;
+}
+
+.your-order th {
+  border-bottom: 2px solid;
+}
+table {
+  color: black;
+  width: 100%;
+}
+
+tr.headings {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+tr.total {
+  font-style: italic;
+}
+
+td {
+  padding: 10px;
+  text-align: center;
+}
+
+/*tr:nth-child(even) {
+  background-color: #eee;
+}
+*/
+.check-correct {
+  margin-top: 10px;
+}

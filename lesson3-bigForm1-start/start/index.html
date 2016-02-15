@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiz - One Big, Ugly Form</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <header>
+    <span class="company-name">Cam's company</span>
+    <span class="company-page">Cam's Checkout</span>
+  </header>
+  <section class="progress-bar"></section>
+  <div id="main">
+    <div id="form">
+      <section class="form">
+        <h3>Your Name and Demographic Information</h3>
+        <label>
+          <input type="text" class="progress" placeholder="Your Name">
+        </label>
+        <label id="age">Age
+          <select name="age" class="age">
+            <option>&lt;18</option>
+            <option>18-25</option>
+            <option>26-35</option>
+            <option>36-50</option>
+            <option>&gt;50</option>
+          </select>
+        </label>
+        <label id="gender">Gender
+          <select name="gender" class="gender">
+            <option>Male</option>
+            <option>Female</option>
+          </select>
+        </label>
+        <label>
+          <input type="text" class="progress" placeholder="Email Address">
+        </label>
+        <label>
+          <input type="text" class="progress" placeholder="Confirm Email Address">
+        </label>
+        <!-- <div class="check-box"> -->
+          <input id="mail-list" class="inline" type="checkbox">
+          <label for="mail-list">Put me on the mailing list?</label>
+        <!-- </div> -->
+
+        <h3>Your Shipping Address</h3>
+        <label>
+          <input type="text" class="progress" placeholder="Company">
+        </label>
+        <label>
+          <input type="text" class="progress" placeholder="Address">
+        </label>
+        <label>
+          <input type="text" class="progress" placeholder="City">
+        </label>
+        <label>
+          <input type="text" class="progress" placeholder="State/Province">
+        </label>
+        <label>
+          <input type="text" class="progress" placeholder="Postal Code">
+        </label>
+        <label>
+          <input type="text" class="progress" placeholder="Country">
+        </label>
+
+        <h3>Your Credit Card Information</h3>
+        <div class="cc-warning"><em>Note: don't enter any actual credit card info!</em></div>
+        <label>
+          <input type="text" class="progress" placeholder="Credit Card Number">
+        </label>
+        <label id="credit">Credit Card Type
+          <select name="cc">
+            <option>Visa</option>
+            <option>American Express</option>
+            <option>Mastercard</option>
+            <option>Discover</option>
+          </select>
+        </label>
+        <label>Expiration Date
+          <input type="text" class="progress" placeholder="MM">
+          <input type="text" class="progress" placeholder="YY">
+        </label>
+        <label>CVV
+          <input type="number" class="progress">
+        </label>
+      </section>
+    </div>
+    <div id="order-review">
+      <section class="order-review">
+        <h3>Your Order:</h3>
+        <table class="your-order">
+          <thead>
+            <tr class="headings">
+              <th>Product</th>
+              <th>Quantity</th>
+              <th>Price</th>
+              <th class="order-total">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Game Console 2015</td>
+              <td>1</td>
+              <td>$500.00</td>
+              <td class="order-total">$500.00</td>
+            </tr>
+            <tr>
+              <td>Platformer Bros 3D</td>
+              <td>1</td>
+              <td>$50.00</td>
+              <td class="order-total">$50.00</td>
+            </tr>
+            <tr class="total">
+              <td>Total</td>
+              <td colspan="2">$550.00</td>
+            </tr>
+          </tbody>
+        </table>
+        <input id="check-order" type="checkbox">
+        <label for="check-order" class="check-correct">Is your order correct?</label>
+        <div class="submit">
+          <input id="submit" type="submit">
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    var submit = document.querySelector('#submit');
+    submit.onclick = function () {
+      alert("All of your information was valid, right? I'll just go ahead and assume that it is ;)\n\nThanks for your submission!");
+    };
+
+    // 实现process-bar的显示
+    var allinputs = document.getElementsByClassName("progress");
+    var progress = document.querySelector(".progress-bar");
+    var total = allinputs.length;
+    var num = 0;
+
+    for (var i = 0; i < allinputs.length; i++) {
+      allinputs[i].addEventListener("blur", function (event) {
+        if (this.value.length > 0) {
+          if (this.name != "added") {
+            num += 1;
+            var percent = Math.round(num / total * 100);
+            progress.style.width = percent + "%";
+            this.name = "added";
+          }
+        } else {   // 长度为0表示内容为空，不可能小于0
+          if (this.name == "added") {
+            num -= 1;
+            var percent = Math.round(num / total * 100);
+            progress.style.width = percent + "%";
+            this.name = "minused";
+          }
+        }
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,inital-scale=1">
+  <title>Event Planner</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+<body>
+  <div id="container">
+    <header>
+      <div id="logo">
+        <h1>eMeeting</h1>
+      </div>
+      <div id="search">
+        <input type="search">
+      </div>
+      <div id="profile">
+        <span id="login-status">未登录</span>
+      </div>
+      <a id="menu" class="header__menu">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M2 6h20v3H2zm0 5h20v3H2zm0 5h20v3H2z"/>
+        </svg>
+      </a>
+    </header>
+    <div id="slide" class="reg">
+      <div id="register">
+        <form class="register-info" action="index.html" method="">
+          <!-- 用户名：不能为空 -->
+          <label for="user-name" class="user-info">
+            <input id="user-name" class="user-info" type="text"
+                    placeholder="用户名" autofocus required>
+            <em></em>
+          </label>
+
+          <!-- email格式满足正则表达式: [\d\w\_]+@[\d\w]+\.[\w]+ -->
+          <label for="user-email" class="user-info">
+            <input id="user-email" class="user-info" type="emai"
+                   placeholder="邮箱">
+            <em></em>
+          </label>
+
+          <!-- 密码格式满足:
+          16-100 characters (longer is better)
+          At least one of these symbols: !, @, #, $, %, ^, &, *
+          At least one number
+          At least one lowercase letter
+          At least one uppercase letter -->
+          <label for="user-password" class="user-info">
+            <input id="user-password" class="user-info" type="password"
+                   placeholder="密码" required>
+            <em></em>
+          </label>
+
+          <!-- 为可选项 -->
+          <label for="user-job" class="user-info">
+            <input id="user-job" class="user-info" type="text"
+                   placeholder="当前职业">
+          </label>
+
+          <input id="submit" class="btn btn-default btn-sm" type="button" value="注册">
+          <!-- 登录失败要给出错误提示：如密码错误、用户名不存在 -->
+          <input type="button" class="btn btn-default btn-sm" id="login" value="登录">
+        </form>
+      </div>
+    </div>
+    <main>
+      <table id="one-week">
+        <thead>
+          <tr>
+            <th class="time week">< ></th>
+            <th class="week">周一</th>
+            <th class="week">周二</th>
+            <th class="week">周三</th>
+            <th class="week">周四</th>
+            <th class="week">周五</th>
+            <th class="week">周六</th>
+            <th class="week">周日</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="time">AM1</td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+          </tr>
+          <tr>
+            <td class="time">AM2</td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+          </tr>
+          <tr>
+            <td class="time">AM3</td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+          </tr>
+          <tr>
+            <td class="time">AM4</td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+          </tr>
+          <tr>
+            <td class="time">AM5</td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+          </tr>
+          <tr>
+            <td class="time">AM6</td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+          </tr>
+          <tr>
+            <td class="time">AM7</td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+          </tr>
+          <tr>
+            <td class="time">AM8</td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+          </tr>
+          <tr>
+            <td class="time">AM9</td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+          </tr>
+          <tr>
+            <td class="time">AM10</td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+          </tr>
+          <tr>
+            <td class="time">AM11</td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+          </tr>
+          <tr>
+            <td class="time">AM12</td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+          </tr>
+          <tr>
+            <td class="time">PM1</td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+          </tr>
+          <tr>
+            <td class="time">PM2</td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+          </tr>
+          <tr>
+            <td class="time">PM3</td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+          </tr>
+          <tr>
+            <td class="time">PM4</td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+          </tr>
+          <tr>
+            <td class="time">PM5</td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+          </tr>
+          <tr>
+            <td class="time">PM6</td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+          </tr>
+          <tr>
+            <td class="time">PM7</td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+          </tr>
+          <tr>
+            <td class="time">PM8</td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+          </tr>
+          <tr>
+            <td class="time">PM9</td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+          </tr>
+          <tr>
+            <td class="time">PM10</td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+          </tr>
+          <tr>
+            <td class="time">PM11</td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+          </tr>
+          <tr>
+            <td class="time">PM12</td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+            <td class="event-cell"></td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+
+    <!-- overlay window used for create event -->
+    <div class="overlay"></div>
+    <div class="create-event">
+      <h1>创建活动</h1>
+      <input id="event-name" class="event-info" type="text" value="" placeholder="活动名称" autofocus>
+      <select name="event type" class="event-info">
+        <option value="birthday">生日party</option>
+        <option value="conference" selected="selected">会议</option>
+        <option value="wedding">婚礼</option>
+      </select>
+      <input class="event-info" type="text" value="" placeholder="活动组织者">
+      <input class="event-info" type="text" value="" placeholder="客户名单">
+      <input class="event-info" type="text" value="" placeholder="活动地点">
+      <textarea class="event-commit" placeholder="活动说明"></textarea>
+      <div id="event-action">
+        <input type="button" id="event-cancel" value="取消">
+        <input type="button" id="event-ok" value="确定">
+      </div>
+    </div>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>touchend</title>
+  <style type="text/css">
+    #toucharea {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      position: relative;
+      top: 0px;
+      left: 0px;
+    }
+    #output {
+      -webkit-user-select: none;
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="toucharea"></div>
+  <p id="output"></p>
+   <script>
+    var touch_div = document.getElementById("toucharea");
+    var ptxt = document.getElementById("output");
+    var lastX, lastY;
+    touch_div.addEventListener("touchstart", function(event) {
+      var touch = event.touches[0];
+      lastX = touch.pageX;
+      lastY = touch.pageY;
+      console.log("touched");
+      addEventListener("touchmove", dragDiv);
+      addEventListener("touchend", showTip);
+    });
+
+    function showTip() {
+      ptxt.innerHTML = "touchend";
+      removeEventListener("touchmove", dragDiv);
+    }
+
+    function dragDiv(event) {
+      var touch = event.touches[0];
+      console.log(touch.pageX, touch.pageY);
+      var distX = touch.pageX - lastX + Number(touch_div.style.left.slice(0, -2));
+      var distY = touch.pageY - lastY + Number(touch_div.style.top.slice(0, -2));
+      lastX = touch.pageX;
+      lastY = touch.pageY;
+      touch_div.style.top = distY + "px";
+      touch_div.style.left = distX + "px";
+    }
+  </script>
+</body>
+</html>
